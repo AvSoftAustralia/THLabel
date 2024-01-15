@@ -77,7 +77,7 @@
 	self.gradientEndPoint = CGPointMake(0.5, 0.8);
 	self.automaticallyAdjustTextInsets = YES;
     
-    imageQueue = dispatch_queue_create("com.thlabelqueue",DISPATCH_QUEUE_SERIAL);
+    imageQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
 
 }
 
@@ -212,6 +212,7 @@
 - (void) updateImage {
     // Don't draw anything, if there is no text.
     if (!self.text || [self.text isEqualToString:@""]) {
+        self.textImage = nil;
         return;
     }
     CGRect rect = CGRectMake(0, 0, self.bounds.size.width+_strokeSize*2, self.bounds.size.height);
