@@ -77,8 +77,15 @@
 	self.gradientEndPoint = CGPointMake(0.5, 0.8);
 	self.automaticallyAdjustTextInsets = YES;
     
-    imageQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+}
 
+dispatch_queue_t backgroundQueue() {
+    static dispatch_once_t queueCreationGuard;
+    static dispatch_queue_t queue;
+    dispatch_once(&queueCreationGuard, ^{
+        queue = dispatch_queue_create("com.thlabelqueue",DISPATCH_QUEUE_SERIAL);
+    });
+    return queue;
 }
 
 - (BOOL)hasShadow {
@@ -241,7 +248,7 @@
     CGSize offset = self.shadowOffset;
 
     
-    dispatch_async(imageQueue, ^{
+    dispatch_async(backgroundQueue(), ^{
         
         
         UIGraphicsBeginImageContextWithOptions(rect.size, NO, 0.0);
