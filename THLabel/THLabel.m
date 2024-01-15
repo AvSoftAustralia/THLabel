@@ -180,8 +180,11 @@
 	}
 }
 - (void)setText:(NSString *)text {
-    [super setText:text];
-    [self updateImage];
+    if (![super.text isEqualToString:text])
+    {
+        [super setText:text];
+        [self updateImage];
+    }
 }
 
 - (void)setInnerShadowBlur:(CGFloat)innerShadowBlur {
@@ -211,7 +214,7 @@
     if (!self.text || [self.text isEqualToString:@""]) {
         return;
     }
-    CGRect rect = CGRectMake(0, 0, self.bounds.size.width+_strokeSize*2, self.bounds.size.height + _strokeSize*2);
+    CGRect rect = CGRectMake(0, 0, self.bounds.size.width+_strokeSize*2, self.bounds.size.height);
 
     
     // -------
