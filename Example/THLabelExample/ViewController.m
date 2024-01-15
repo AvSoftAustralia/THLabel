@@ -35,7 +35,7 @@
 	
 	// Demonstrate stroke.
 	self.label3.strokeColor = kStrokeColor;
-	self.label3.strokeSize = kStrokeSize;
+	self.label3.strokeSize = 2.0;
 	
 	// Demonstrate fill gradient.
 	self.label4.gradientStartColor = kGradientStartColor;

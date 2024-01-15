@@ -68,6 +68,9 @@ typedef NS_OPTIONS(NSUInteger, THLabelFadeTruncatingMode) {
 
 @interface THLabel : UILabel
 
+{
+    dispatch_queue_t imageQueue;
+}
 @property (nonatomic, assign) CGFloat letterSpacing;
 @property (nonatomic, assign) CGFloat lineSpacing;
 
@@ -92,4 +95,5 @@ typedef NS_OPTIONS(NSUInteger, THLabelFadeTruncatingMode) {
 @property (nonatomic, assign) UIEdgeInsets textInsets;
 @property (nonatomic, assign) BOOL automaticallyAdjustTextInsets;
 
+@property (retain) UIImage *textImage;
 @end
