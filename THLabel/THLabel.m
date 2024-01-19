@@ -181,7 +181,6 @@ dispatch_queue_t backgroundQueue() {
 - (void)setTextInsets:(UIEdgeInsets)textInsets {
 	if (!UIEdgeInsetsEqualToEdgeInsets(self.textInsets, textInsets)) {
 		_textInsets = textInsets;
-		//[self setNeedsDisplay];
         [self updateImage];
 
 	}
@@ -192,6 +191,26 @@ dispatch_queue_t backgroundQueue() {
         [super setText:text];
         [self updateImage];
     }
+}
+
+- (void)setTextColor:(UIColor *)textColor {
+    [super setTextColor: textColor];
+    [self updateImage];
+}
+
+- (void) setBackgroundColor:(UIColor *)backgroundColor {
+    [super setBackgroundColor: backgroundColor];
+    [self updateImage];
+}
+
+- (void)setHidden:(BOOL)hidden {
+    [super setHidden: hidden];
+    [self updateImage];
+}
+
+- (void)setTextAlignment:(NSTextAlignment)textAlignment {
+    [super setTextAlignment: textAlignment];
+    [self updateImage];
 }
 
 - (void)setInnerShadowBlur:(CGFloat)innerShadowBlur {
@@ -214,6 +233,19 @@ dispatch_queue_t backgroundQueue() {
 			return self.strokeSize * 2.0;
 	}
 }
+
+- (void)setFrame:(CGRect)frame {
+    [super setFrame: frame];
+    [self updateImage];
+}
+
+- (void)setBounds:(CGRect)bounds {
+    [super setBounds: bounds];
+    [self updateImage];
+}
+
+
+
 
 #pragma mark - Drawing
 - (void) updateImage {

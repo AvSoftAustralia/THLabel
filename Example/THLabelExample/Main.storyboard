@@ -57,8 +57,8 @@
                                     <constraint firstAttribute="width" constant="1" id="mwt-jD-Kbj"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="RAA129" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5jH-TU-5Wy" customClass="THLabel">
-                                <rect key="frame" x="131.5" y="354" width="151" height="48"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="AB" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5jH-TU-5Wy" customClass="THLabel">
+                                <rect key="frame" x="179.5" y="354" width="55" height="48"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
